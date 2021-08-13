@@ -1,0 +1,77 @@
+﻿@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <style>
+        .container {
+            position: absolute;
+            text-align: center;
+            color: black;
+            padding-left: 8px;
+            top: 55px;
+        }
+
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 70px;
+            font-family: 'Lucida Calligraphy';
+            text-align: center;
+            padding-left: 40px;
+
+        }
+
+        h2 {
+            font-size: xx-large;
+            margin-top: 270px;
+            font-family: monospace;
+            color: black;
+           position: static;
+           margin-left: 420px;
+               
+
+        }
+
+        .btn-primary {
+            height: 40px;
+            width: 60px;
+            margin-top: 70px;
+            position: absolute;
+            background-color: purple;
+            color: white;
+            left: 600px;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="/image/scenary.jpg" alt="custom_html_banner1" width="1350" height="200" />
+        <div class="centered">Pulse Venture</div>
+    </div>
+
+        <div class="cd-switch">
+            <h2>Are you ready to start pulse venture?</h2>
+            <div class="switch">
+                <div value="container">
+                    <form method="POST" asp-controller="Chapter" asp-action="ChapterPage">
+                        <input type="submit" class="btn btn-primary" value="YES" />
+                    </form>
+                    <input type="submit" class="btn btn-primary" value="NO" style="margin-left: 150px;" />
+                    </div>
+
+                </div>
+            </div>
+        
+
+</body>
+</html>

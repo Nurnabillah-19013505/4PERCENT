@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=2.0">
+    <title>PULSE - Subscription </title>
+
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    <link href="~/lib/font-awesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/brands.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/solid.min.css" rel="stylesheet" />
+
+    <style>
+
+        body {
+            background-color: snow;
+        }
+
+        nav {
+            color: lightsalmon;
+        }
+
+        html {
+            overflow-y: scroll;
+            min-height: 100%;
+        }
+
+
+        /* Background on mouse-over */
+        .btn:hover {
+            background-color: antiquewhite;
+        }
+    </style>
+
+    @RenderSection("ScriptSection", false)
+
+</head>
+<body>
+
+    <div class="col-12">
+        <div class="row">
+            <nav class="navbar navbar-expand-sm navbar-light bg-light col-12" style="background-color:lightsalmon" role="navigation">
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">
+                            <img src="/Image/Pulse Venture.jpg" width="180" , height=" 100" />
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/Account/Home" class="nav-link">Home </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/Pulse/Introduction" class="nav-link">Introduction</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/Account/Chapter" class="nav-link">Chapter</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/Account/BattleMode" class="nav-link">Battle Mode</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/Account/CardDeck" class="nav-link">Card Decks</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/Pulse/Journal" class="nav-link">Journal</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/Account/Register" class="nav-link">Registration</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+            </nav>
+        </div>
+
+
+        <div class="row">
+            <div class="col-10">
+                @RenderBody()
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+
+
+</body>
+</html>
+
+
+
+

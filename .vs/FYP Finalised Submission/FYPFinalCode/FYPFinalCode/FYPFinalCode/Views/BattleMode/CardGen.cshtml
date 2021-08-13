@@ -1,0 +1,120 @@
+﻿@model CardDeck
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    table{
+        position:absolute;
+        bottom:400px;
+    }
+
+    body{
+        background-color:lightsalmon;
+    }
+    nav {
+        background-color: snow;
+        position: relative;
+        bottom: 0px;
+    }
+    #link {
+        position: absolute;
+        top: 700px;
+        left: 180px;
+        background-color:azure;
+        color: black;
+        border: 2px solid black;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+    #link2 {
+        position: absolute;
+        top: 700px;
+        left: 750px;
+        background-color:azure;
+        color: black;
+        border: 2px solid black;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    #link:hover, #link:active {
+        background-color:mediumaquamarine;
+        color:azure;
+    }
+
+    #link2:hover, #link2:active {
+        background-color: mediumaquamarine;
+        color:azure;
+    }
+
+    .boarder {
+        width: 70%;
+        border: 10px solid;
+        border-radius: 100px;
+        font-family: Arial;
+        font-size: 20px;
+        text-align: center;
+        padding-bottom: 800px;
+        position: absolute;
+        left: 240px;
+        top: 200px;
+        background-color:mintcream;
+    }
+
+    h1{
+        font-family:'Book Antiqua';
+        font-size:30px;
+        position:absolute;
+        top:40px; 
+        text-align:center;
+        width:1000px;
+        font-weight:bold;
+        left:30px;
+    }
+
+    .btn {
+        background-color:darkblue;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        font-size: 16px;
+        margin: 4px 2px;
+        opacity: 0.6;
+        transition: 0.3s;
+        display: inline-block;
+        text-decoration: none;
+        cursor: pointer;
+        position:absolute; 
+        bottom:520px; 
+        left:1300px;
+        
+    }
+
+        .btn:hover {
+            opacity: 1
+        }
+   
+</style>
+<html>
+<body>
+    <form asp-controller="PulseVenture" asp-action="Journal"
+          method="post">
+        <input type="submit" value="journal" class="btn btn-primary" target="_blank" />
+        </form>
+
+        <section class="boarder">
+            <h1>Congrats on finishing your missions</h1>
+            <img src=@("../Carddeck/" + ViewData["RANID"] + ".png") style="position:absolute;left:60px;top:200px;height:400px;width:300px" />
+            <a id="link" href=@("./cardPDF?id="+ViewData["RANID"]) target="_blank">Get My Card</a>
+
+            <img src=@("../Carddeck/" + ViewData["RANID2"] + ".png") style="position:absolute;left:600px;top:200px;height:400px;width:300px" />
+            <a id="link2" href=@("./cardPDF?id="+ViewData["RANID2"]) target="_blank">Get My Card</a>
+        </section>
+
+</body>
+</html>

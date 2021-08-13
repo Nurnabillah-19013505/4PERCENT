@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+
+
+
+@{
+    Layout = null;
+}
+
+
+<style>
+    body {
+        background-color: lightsalmon;
+    }
+
+    h1 {
+        font-family: Garamond,serif;
+        font-size: 68px;
+        color: maroon
+    }
+
+    h3 {
+        font-family: "Brush Script MT",cursive;
+        font-size: 47px;
+        font-weight: lighter;
+        line-height: 0px;
+        color: darkred;
+    }
+
+    button {
+        background-color: lightsalmon;
+        color: black;
+        border: 2px solid lightsalmon;
+        font-family: "Courier New", monospace;
+        position: center;
+        font-size: 18px;
+        margin-top: 15px;
+        font-weight: 300;
+    }
+
+    button2 {
+        background-color: lightsalmon;
+        color: black;
+        border: 2px solid lightsalmon;
+        font-family: "Courier New", monospace;
+        position: center;
+        font-size: 15px;
+        display: block;
+        margin-top: 15px;
+    }
+
+    .checkbox {
+        transform: scale(2);
+        display: block;
+        padding-left: 15px;
+        text-indent: -15px;
+        position: center;
+        background-color: maroon;
+    }
+
+    div1 {
+        position: absolute;
+        left: 550px;
+    }
+
+    body {
+        height: 2000px;
+    }
+
+    #p1 {
+        background-color: forestgreen;
+    }
+
+    div7 {
+        width: 100%;
+        background-color: grey;
+    }
+</style>
+
+<center>
+    <h1>MISSION</h1>
+    <h3>of the week</h3>
+</center>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="~/lib/jquery/jquery.min.js"></script>
+
+@section script{
+    <script type="text/javascript">
+        function use(count) {
+            window.location = "/Mission/SubmitPage";
+            $.ajax({
+                type: "GET",
+                url: url,
+                data: { count },
+                dataType: "html",
+                success: function (count) {
+                    $('#p1').html(count)
+                }
+            }
+    </script>
+}
+
+
+
+
+
+
+
+<body>
+
+    <div1 class="container">
+
+        <form action="/Mission/Mission1" method="post">
+            <!--Mission 1: Watch 2 Deep Breathing Video-->
+            <button class="button button" for="Mission1" value="Go to Mission 1" onclick="~/Views/Mission/Mission1.cshtml">
+                Mission 1: Watch 2 Deep Breathing Video
+            </button>
+            <br />
+        </form>
+
+        <form action="/Mission/Mission2" method="post">
+            <!--Mission 2: Post Your Quote of the Day -->
+            <button class="button button2 " for="Mission2" onclick="~/Views/Mission/Mission2.cshtml">
+                Mission 2: Post Your Quote of the Day
+            </button><br />
+        </form>
+
+
+        <form action="/Mission/Mission3" method="post">
+            <!--Mission 3: Do 10 minutes of Yoga-->
+            <button class="button button2 " for="Mission3" onclick="~/Views/Mission/Mission3.cshtml">
+                Mission 3: Do 10 minutes of Yoga
+            </button><br />
+        </form>
+
+        <form action="/Mission/Mission4" method="post">
+            <!--Mission 4: Post something GOOD that happen this week-->
+            <button class="button button2" for="Mission4" onclick="~/Views/Mission/Mission4.cshtml">
+                Mission 4: Post something good that happen this week
+            </button><br />
+        </form>
+
+        <form action="/Mission/Mission5" method="post">
+            <!--Mission 5: Post Your Wishlist-->
+            <button class="button button2 " for="Mission5" onclick="~/Views/Mission/Mission5.cshtml">
+                Mission 5: Post Your Wishlist
+            </button><br />
+        </form>
+
+
+        <form action="/Mission/Mission6" method="post">
+            <!--Mission 6: 10 Minutes of Meditation-->
+            <button class="button button2 " for="Mission6" onclick="~/Views/Mission/Mission6.cshtml">
+                Mission 6: 10 Minutes of Meditation
+            </button><br />
+        </form>
+
+
+        <form action="/Mission/Mission7" method="post">
+            <!--Mission 7: Plan a zoom catch-up with friends and post a pic of it!-->
+            <button class="button button2" id="button7" for="Mission7">
+                Mission 7: Plan a Zoom catch-up with Friends and Post a picture of it!
+            </button><br />
+        </form>
+        <br>
+
+        <div7 id="PBar">
+            <progress max="100.1" id="p1"></progress>
+        </div7>
+
+
+        <form action="/PulseVenture/EndChapter" method="post">
+            <!--Mission 7: Plan a zoom catch-up with friends and post a pic of it!-->
+            <button class="button button2" id="button7" for="Mission7">
+          EndChapter
+            </button><br />
+        </form>
+
+
+    </div1>
+
+</body>
+
+
+
+<script src="~/lib/jquery/jquery.min.js"></script>
+<script>
+        function incr() {
+                    var v1 = document.getElementById("DP").value;
+                    document.getElementById("DP").value = v1 + 15;
+                    sessionStorage.setItem("countprogess", "DP");
+                }
+
+        function get() {
+                    let data = sessionStorage.getItem("countprogress");
+                    HTMLProgressElement.position(data);
+                }
+
+</script>
+

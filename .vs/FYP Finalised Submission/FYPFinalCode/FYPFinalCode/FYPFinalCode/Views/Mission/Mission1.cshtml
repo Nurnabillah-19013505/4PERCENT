@@ -1,0 +1,151 @@
+﻿
+@{ Layout = null; }
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="~/lib/jquery/jquery.min.js"></script>
+
+<script language="javascript" type="text/javascript">
+        var sec = 500;
+        var myTimer = document.getElementById('myTimer');
+        var myBtn = document.getElementById('myBtn');
+        window.onload = countDown;
+
+        function countDown() {
+            if (sec == 0) {
+                $("#myBtn").removeAttr("disabled"); // enabling a html button
+                $("#myBtn").removeClass().addClass("btnEnable");
+
+                return;
+            }
+            sec -= 1;
+            window.setTimeout(countDown, 10);
+        }
+</script>
+
+
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Mission One</title>
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<style>
+  
+    body {
+        background-color: lightsalmon;
+    }
+
+    h2 {
+        font-family: 'Times New Roman', Times, serif;
+        position: absolute;
+        left: 380px;
+        margin-top: 20px;
+        font-size: xx-large;
+        color: darkred;
+        font-style: oblique;
+        font: bold;
+        width:750px;
+        text-align:center;
+    }
+
+    .message {
+        visibility: hidden;
+    }
+
+    #test:valid + .message {
+        visibility: visible;
+    }
+
+    label {
+        position: absolute;
+        top:600px;
+        left: -700px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 22px;
+        width:2000px; 
+        text-align:center;
+
+    }
+
+
+    input[type="text"] {
+        position: absolute;
+        bottom: -600px;
+        width: 500px;
+        height: 300px;
+        left:-600px;
+        
+        
+    }
+
+    button {
+        position: absolute;
+        bottom: -250px;
+        left: 800px;
+        width: 80px;
+
+    }
+
+    .btnEnable {
+        background-color: darkturquoise;
+        border: 2px solid dotted;
+        color: black;
+        cursor: pointer;
+    }
+
+    .btnDisable {
+        background-color: mediumpurple;
+        border: 2px solid dotted;
+        color: white;
+        cursor: not-allowed;
+    }
+  
+</style>
+
+<h2> Watch 2 Deep Breathing Videos</h2>
+
+    &nbsp;
+
+<form method="post"
+      action="/Mission/MissionOnePost"
+      enctype="multipart/form-data">
+
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+    <!-- Posting 2 videos -->
+    <div style="float:left;margin-left:800px; margin-top: 60px;">
+        <iframe width="450" height="300" src="https://www.youtube.com/embed/acUZdGd_3Dg" title="YouTube video player" frameborder="0" allowfullscreen> </iframe>
+    </div>
+
+    <div style="float:right;margin-top:60px; position: absolute; margin-left:200px;">
+        <iframe width="500" height="300" src="https://www.youtube.com/embed/SEfs5TJZ6Nk" title="YouTube video player" frameborder="0" allowfullscreen> </iframe>
+    </div>
+
+    <div class="form-group row">
+        <label class="control-label col-sm-3" for="mdes">Post your insights of the videos:</label>
+        <div class="col-sm-5">
+            <input type="text" placeholder="Type here!" id="mdes" name="Mission_Des" required="required">
+        </div>
+    </div>
+
+    <div id="wrapper">
+        <div id="myTimer"></div>
+        <button type="submit" id="myBtn" class="btnDisable" disabled>POST</button>
+    </div>
+
+
+
+    @if (ViewData["Message"] != null)
+    {
+        <div class="form-group row">
+            <div class="offset-sm-3 col-sm-6">
+                <div class="alert alert-@ViewData["MsgType"]">
+                    @ViewData["Message"]
+
+                </div>
+            </div>
+        </div>
+    }
+</form>

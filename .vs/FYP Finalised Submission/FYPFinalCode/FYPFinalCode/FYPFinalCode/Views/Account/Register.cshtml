@@ -1,0 +1,220 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+
+}
+
+@model Parent
+
+
+<style>
+    
+    body {
+        height: 1000px;
+    }
+
+    #login-box {
+        position: relative;
+        margin-top: 70px;
+        margin-left: 950px;
+        margin-bottom: 50px;
+        width: 900px;
+        height: 700px;
+        background-color: beige;
+    }
+
+    h2 {
+        position: absolute;
+        left: 170px;
+        top: -150px;
+        font-weight: bold;
+        width: 800px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    p {
+        font-weight: bold;
+        font-family: Georgia;
+        position: absolute;
+        left: 5px;
+        width: 500px;
+        top: -50px;
+    }
+
+
+    .left {
+        position: absolute;
+        top: 100px;
+        left: -520px;
+        width: 500px;
+        height: 100px;
+    }
+
+    h6 {
+        font-size: small;
+        font-weight: 100;
+        background-position: bottom;
+        width: 200px;
+    }
+
+    al {
+        position: absolute;
+        left: 40px;
+        top: 520px;
+    }
+
+    div2 {
+        position: absolute;
+        top: 800px;
+        left: 670px;
+    }
+
+    input[type="submit"] {
+        background-color: red;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    input[type="checkbox"] {
+        position: absolute;
+        bottom: -440px;
+        left: 20px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .container {
+        position: absolute;
+        right: 1000px;
+        top: 100px;
+    }
+</style>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <form asp-controller="Account"
+          asp-action="Register"
+          method="post">
+
+        <div class="container">
+            <div id="login-box">
+                <div class="form-group row">
+                    <div class="offset-sm-8 col-sm-2">
+
+                        <div class="left">
+
+                            <h2> PULSE VENTURE - Registration </h2>
+
+                            <p> <u> Details of Parent </u> </p>
+
+                            <div class="form-group row">
+                                <label class="control-label col-sm-12" asp-for="ParentName"> Full Name of Parent: </label>
+                                <div class="col-sm-12">
+                                    <input type="text" asp-for="ParentName" class="form-control" />
+                                </div>
+                                <div class="col-sm-8">
+                                    <span asp-validation-for="ParentName" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="control-label col-sm-12" asp-for="ParentMobileNo"> Contact Number of Parent: </label>
+                                <div class="col-sm-12">
+                                    <input type="text" asp-for="ParentMobileNo" class="form-control" />
+                                </div>
+                                <div class="col-sm-8">
+                                    <span asp-validation-for="ParentMobileNo" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="control-label col-sm-12" asp-for="ParentEmail"> Email of Parent: </label>
+                                <div class="col-sm-12">
+                                    <input type="text" asp-for="ParentEmail" class="form-control" />
+                                </div>
+                                <div class="col-sm-8">
+                                    <span asp-validation-for="ParentEmail" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="control-label col-sm-12" asp-for="ParentEmailPass"> Password (Email): </label>
+                                <div class="col-sm-12">
+                                    <input type="text" asp-for="ParentEmailPass" class="form-control" />
+                                </div>
+                                <div class="col-sm-8">
+                                    <span asp-validation-for="ParentEmailPass" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="control-label col-sm-12" asp-for="ParentEntryPass"> Set a PIN Number as Entry Password: </label>
+                                <div class="col-sm-12">
+                                    <input type="text" asp-for="ParentEntryPass" class="form-control" />
+                                </div>
+                                <div class="col-sm-8">
+                                    <span asp-validation-for="ParentEntryPass" class="text-danger"></span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label class="control-label col-sm-12" asp-for="ParentVc"> Verification Code: </label>
+                                <div class="col-sm-12">
+                                    <input type="text" asp-for="ParentVc" class="form-control" />
+                                </div>
+                                <div class="col-sm-8">
+                                    <span asp-validation-for="ParentVc" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <input type="checkbox" name="Agree" id="Agree" value="yes" />
+                            </div>
+
+                            <al>
+                                I agree to the
+                                <a href="/Account/TermsCon" target="_blank"> Terms & Conditions </a>
+                            </al>
+
+                            <div class="signbtn">
+                                <input type="submit" value="Register for an Account" class="btn btn-primary" />
+                            </div>
+
+                            @if (ViewData["Message"] != null)
+                            {
+                                <div class="form-group row">
+                                    <div class="alert alert-@ViewData["MsgType"]">
+                                        <text>@ViewData["Message"]</text>
+                                    </div>
+                                </div>}
+
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+    <div2>
+        <a href="~/Account/StudentLogin" style="color:crimson">Go to Login Page</a>
+    </div2>
+
+
+
+</body>
+</html>
+

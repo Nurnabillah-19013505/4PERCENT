@@ -1,0 +1,104 @@
+﻿@{ Layout = null; }
+<!DOCTYPE html>
+
+<style>
+
+
+    h1 {
+        color: lightcoral;
+        font-weight: bold;
+        font-family: "Lucida Handwriting", monospace;
+        font-size: 75px;
+    }
+
+    h3 {
+        color: lightsteelblue;
+        font-family: "Garamond",serif;
+        font-size: 35px;
+    }
+
+    .p {
+        font-family: "Georgia",serif;
+        font-size: 32px;
+        color: lightcoral;
+        font-weight: bold;
+    }
+
+    #footer {
+        position: center;
+        left: 0;
+        bottom: 90px;
+        width: 100%;
+        background-color: lightcoral;
+        text-align: center;
+        color: black;
+        font-family: 'Courier New',monospace;
+        font-size: 20px;
+    }
+
+    #page-container {
+        position: relative;
+        min-height: 700vh;
+    }
+
+
+
+    #btn {
+        margin-left: 60px;
+        color: white;
+    }
+</style>
+
+
+<!-- Welcome to Pulse statemet-->
+
+<h1 style="text-align:center">Parents Homepage</h1>
+
+    &nbsp;
+
+<!-- Pulse Vision -->
+<h3 style="text-align:center">-- Where Students Health Matters -- </h3>
+
+    &nbsp;
+
+<!--Paragraph-->
+<p style="text-align:center">
+    Pulse offers your child with different enjoyment and entertainment. Not only will it help to occupy their time but help them to grow into one fine adult!
+    Always check on your child's mental and physical health! &#128512;
+</p>
+
+    &nbsp;
+
+<!--Images displayed-->
+<body>
+    <center>
+        <div class="w3-content w3-section" style="max-width:500px">
+            <img class="mySlides" src="/image/people.jpg" style="width:100%">
+            <img class="mySlides" src="/image/resting.jpg" style="width:100%">
+            <img class="mySlides" src="/image/run.jpg" style="width:100%">
+        </div>
+
+        <script>
+            var myIndex = 0;
+            carousel();
+
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                myIndex++;
+                if (myIndex > x.length) { myIndex = 1 }
+                x[myIndex - 1].style.display = "block";
+                setTimeout(carousel, 3000); // Change image every 3 seconds
+            }
+        </script>
+    </center>
+</body>
+
+<!--footer-->
+<div id="footer">
+    <p>P U L S E</p>
+</div>
+

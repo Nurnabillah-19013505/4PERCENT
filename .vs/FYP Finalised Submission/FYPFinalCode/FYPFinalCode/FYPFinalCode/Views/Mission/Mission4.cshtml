@@ -1,0 +1,145 @@
+﻿@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PULSE VENTURE - Upload File</title>
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+     
+        .container{
+            margin-bottom:-300px;
+        }
+        body {
+            background-color: lightsalmon;
+            height: 1450px;
+        }
+
+        h2 {
+            position: absolute;
+            width: 1000px;
+            top: 55px;
+            left: 160px;
+            font-family: 'Mongolian Baiti';
+            font-weight: bold;
+            color: darkslategrey;
+            font-size: x-large;
+        }
+
+        p {
+            position: absolute;
+            top: 25px;
+            left: 65px;
+        }
+
+        w {
+            position: absolute;
+            top: 830px;
+            left: 170px;
+            width: 500px;
+        }
+
+        label {
+            position: absolute;
+            left: 300px;
+            top: 120px;
+            font-family: 'Lucida Sans';
+            color: black;
+        }
+
+        span {
+            position: absolute;
+            left: 300px;
+            top: 190px;
+        }
+
+        div2 {
+            position: absolute;
+            top:300px;
+            left: 500px;
+        }
+
+        input[type=file] {
+            position: absolute;
+            height: 46px;
+            top: 150px;
+            left: 146px;
+            background-color: gainsboro;
+        }
+
+        input[type="submit"] {
+            position: absolute;
+            top: 170px;
+            left: 146px;
+            background-color: darkslateblue;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <form method="post"
+              action="/Mission/Mission4Post"
+              enctype="multipart/form-data">
+
+            <div class="form-group row">
+                <div class="offset-sm-2 col-sm-6">
+                    <p><img src="~/Jimage/goodicon.png" width="85" , height="85" /></p>
+                    <h2>Mission 4 - Post something positive that happened this week</h2>
+                </div>
+            </div>
+
+            <div id="picture">
+                <div class="form-group row">
+                    <label class="control-label col-sm-2" for="picture">Upload Picture :</label>
+                    <div class="col-sm-6">
+                        <input type="file" name="picture" id="picture" class="form-control" />
+                    </div>
+                </div>
+            </div>
+
+            @if (ViewData["Picture"] != null)
+            {
+                <div class="form-group row">
+                    <div class="offset-sm-2 col-sm-6">
+                        <span><img src="/Photo/@ViewData["Picture"]" width="450" height="650" /></span>
+                    </div>
+                </div>
+            }
+
+
+            <div class="form-group row">
+                <div class="offset-sm-2 col-sm-6">
+                    <input type="submit" value="Upload" class="btn btn-primary" />
+                </div>
+            </div>
+
+            <div2>
+                <a href="~/Mission/MissionPage" style="color:snow" width="100">Back to Mission Page</a>
+            </div2>
+
+            @if (ViewData["Message"] != null)
+            {
+                <div class="form-group row">
+                    <div class="offset-sm-2 col-sm-6">
+                        <w>
+                            <div class="alert alert-@ViewData["MsgType"]">
+                                <text>@Html.Raw(ViewData["Message"])</text>
+                            </div>
+                        </w>
+                    </div>
+                </div>
+            }
+
+
+        </form>
+
+    </div>
+
+</body>
+</html>

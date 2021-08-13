@@ -1,0 +1,108 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model FYPFinalCode.Models.Student
+
+<form method="post"
+    asp-controller="User" asp-action= "InfoInput">
+
+    <style>
+        body {
+            background-color: snow;
+        }
+
+        h1 {
+            color: maroon;
+            font-weight: 400;
+            font-family: 'Lucida Calligraphy',cursive;
+            font-size: 60px;
+        }
+
+
+        .button1 {
+            background-color: lightsalmon;
+            color: black;
+            border: 2px solid darksalmon;
+            position: center;
+            margin-top: 30px;
+            font-size: 16px;
+            font-family: "Courier New", monospace;
+        }
+
+        .button:hover {
+            background-color: lightgreen;
+            color: darkgreen;
+            border: 2px solid darkgreen;
+        }
+
+        label {
+            font-size: 19.5px;
+        }
+    </style>
+
+    &nbsp;
+
+    <h1 style="text-align:center">Enter Your Information</h1>
+
+    &nbsp;
+
+    <!--Student enter BC number-->
+    <center>
+        <div>
+            <div class="form-group row">
+                <label asp-for="StudentBc" class="form-control-label col-sm-3">
+                    Student NRIC :
+                </label>
+                <div class="col-sm-3">
+                    <input type="text" asp-for="StudentBc" class="form-control" style="height:35px; width:358px" />
+                    <span asp-validation-for="StudentBc" class="text-danger"></span>
+                </div>
+            </div>
+
+            &nbsp;&nbsp;
+
+            <!--Student entering their name-->
+            <div class="form-group row">
+                <label asp-for="StudentName" class="form-control-label col-sm-3">
+                    Name :
+                </label>
+                <div class="col-sm-3">
+                    <input type="text" asp-for="StudentName" class="form-control" style="height:35px; width:358px" />
+                    <span asp-validation-for="StudentName" class="text-danger"></span>
+                </div>
+            </div>
+
+            &nbsp;&nbsp;
+
+            <!--Student Age-->
+            <div class="form-group row">
+                <label asp-for="StudentAge" class="form-control-label col-sm-3">
+                    Age :
+                </label>
+                <div class="col-sm-3">
+                    <input type="text" asp-for="StudentAge" class="form-control" style="height:35px; width:358px" />
+                    <span asp-validation-for="StudentAge" class="text-danger"></span>
+                </div>
+            </div>
+
+            &nbsp;&nbsp;
+
+            <div class="form-group row">
+                <div class="offset-sm-3 col-sm-3">
+                    @if (ViewData["Message"] != null)
+                    {
+                        <div class="alert alert-warning">
+                            @ViewData["Message"]
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <button class="button button1"> ! READY FOR PULSE VENTURE !</button>
+    </center>
+
+</form>
+

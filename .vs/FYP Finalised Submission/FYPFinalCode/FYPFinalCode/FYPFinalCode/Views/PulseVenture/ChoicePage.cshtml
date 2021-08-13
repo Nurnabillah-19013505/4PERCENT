@@ -1,0 +1,109 @@
+﻿<!-- Choice Page (Parent/Child Picking Page -->
+
+<!-- Getting Choice Nav Bar -->
+@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<style>
+
+    .column{
+        float: left;
+        width: 33px;
+        padding: 5px;
+    }
+
+    .row::after{
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    a {
+        position:absolute;
+        left:700px;
+        margin-top:20px;
+    }
+    p {
+        position:absolute;
+        left:200px;
+        top:100px;
+    }
+
+    
+    .button1 {
+        background-color: antiquewhite;
+        color: black;
+        border: 2px solid darkblue;
+        position: absolute;
+        left:250px;
+        top: 400px;
+        font-size:22px;
+        font-family:"Times New Roman", serif;
+        
+    }
+
+    .button:hover {
+        background-color: #bcf7f7;
+        color: darkblue;
+    }
+    
+    .button2{
+        background-color: antiquewhite;
+        color: black;
+        border: 2px solid darkcyan;
+        position:absolute;
+        left: 750px;
+        top: 400px;
+        font-size: 22px;
+        font-family:"Times New Roman", serif;
+
+    }
+
+    .button:hover{
+        background: lightgreen;
+        color:darkgreen
+    }
+   body{
+       background-color:snow;
+   }
+
+</style>
+
+<!DOCTYPE html>
+<style>
+    h4{
+        color:darkred;
+        font-weight: bold;
+        font-family: "Lucida Handwriting", monospace;
+        font-size: 55px;
+        text-align:center;
+        width:1100px;
+    }
+</style>
+<body>
+    <div class="content">
+        <!-- Question Asked -->
+        <h4 style="text-align:center">Are you a Parent or Child?</h4>
+
+        <!-- Adding the picture of parent/child -->
+        <div class="row">
+            <div class="column">
+                <p><img src="~/image/parent.png" alt="Parent" style="width:200px" /></p>
+            <div>
+                <a><img src="~/image/child.png" alt="Child" style="width:200px" /></a>
+            </div>
+        </div>
+
+        <form action="/Account/PinNo" method="post">
+            <button class="button button1">Parent</button>
+        </form>
+
+        <form action="/PulseVenture/PulseVentureHomepage" method="post">
+            <button class="button button2">Child</button>
+        </form>
+
+    </div>
+        </div>
+
+
+</body>

@@ -1,0 +1,104 @@
+﻿@model Parent
+@{
+    Layout = null;
+}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- style sheets references -->
+<link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+<!-- script files references -->
+<script src="~/lib/jquery/jquery.min.js"></script>
+<script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="~/lib/jquery/jquery.validate.min.js"></script>
+<script src="~/lib/jquery/jquery.validate.unobtrusive.min.js"></script>
+@section scripts{
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+<style>
+
+    .bg_box {
+        background-color:lightsalmon; /* Fallback color */
+        border: 3px solid #f1f1f1;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 80%;
+        padding: 20px;
+        top: 300px;
+    }
+
+    body {
+        background-image:url('@Url.Content("~/image/PULSE_BC.jpg")');
+        background-size: cover;
+        /* Full height */
+        height: 100%;
+        width: 100%;
+        /* Center and scale the image nicely */
+        position: relative;
+        background-repeat: no-repeat;
+        z-index:-1;
+       opacity:0.8;
+    }
+
+    .btn {
+        position: relative;
+        top: 90px;
+        left: 1100px;
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 24px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: black;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+        z-index: 2;
+    }
+
+    .btn:hover {
+        background-color:aliceblue;
+    }
+
+    .btn:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+
+    span{
+        position:absolute;
+    }
+
+
+
+</style>
+
+<body>
+    <form asp-controller="Account" asp-action="Homepage" method="post">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <div class="bg_box">
+                    <h1>Enter Pin Number to get parental access</h1>
+
+
+
+                    <input type="text" asp-for="ParentVc" name="PinNo" id="PinNo" class="form-control" placeholder="Enter PinNo" />
+                    <span asp-validation-for="ParentVc" class="text-danger"></span>
+
+                    <input type="submit" value="Submit" class="btn btn-default" />
+
+                </div>
+            </div>
+        </div>
+
+    </form>
+</body>

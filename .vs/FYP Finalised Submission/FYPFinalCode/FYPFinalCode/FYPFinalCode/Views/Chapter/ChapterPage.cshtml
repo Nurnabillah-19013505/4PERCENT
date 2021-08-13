@@ -1,0 +1,52 @@
+﻿@{ Layout = "PulseUser";}
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Chapter</title>
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+
+<style>
+    body {
+        background-color: lightsalmon;
+    }
+
+    h2 {
+        font-family: 'Times New Roman', Times, serif;
+        position: absolute;
+        font-size: 55px;
+        color: darkred;
+        font-style: oblique;
+        font: bold;
+        top: 60px;
+       margin-left: 450px;
+    }
+
+    button[type="submit"] {
+        display: block;
+        width: 100%;
+        border: none;
+        color: black;
+        padding: 14px 28px;
+        font-size: 36px;
+        cursor: pointer;
+        text-align: center;
+        font-weight: bold;
+        margin-top: 200px;
+        font-family: 'Lucida Sans Typewriter';
+        margin-left:140px;
+    }
+</style>
+
+<h2>Chapter Journey</h2>
+<form action="/Mission/MissionPage" method="post" >
+    <button type="submit" class="btn btn-primary btn-block" style="background-color: aqua;">Chapter 1: Slow Pacing In Life</button>
+    <button type="submit" class="btn btn-primary btn-block" style="background-color: plum;">Chapter 2: We are here together</button>
+   
+    <button type="submit" class="btn btn-primary btn-block" style="background-color: yellow;">Chapter 3: Breath and chill</button>
+   
+    <button type="submit" class="btn btn-primary btn-block" style="background-color: darkcyan;">Chapter 4: Love is important</button>
+    
+    <button type="submit" class="btn btn-primary btn-block" style="background-color: darkseagreen">Chapter 5: My Point Of View</button>
+</form>

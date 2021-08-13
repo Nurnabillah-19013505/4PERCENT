@@ -1,0 +1,65 @@
+﻿@{
+    Layout = "_Layout";
+}
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Card Decks</title>
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<style>
+    body {
+        background-color: lightsalmon;
+    }
+
+    nav{
+        background-color: snow;
+        top: -900px;
+    }
+
+    .card-header {
+        width: 20px;
+        height: 20px;
+        bottom: 900px;
+    }
+
+    h1 {
+        font-family: 'Times New Roman', Times, serif;
+        color: darkred;
+        top: 500px;
+    }
+    
+</style>
+
+@model List<CardDeck>
+        <h1>View Of Card Decks</h1>
+
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-@TempData["MsgType"]">
+                @TempData["Message"]
+            </div>
+        }
+
+        <div class="row">
+            @foreach (CardDeck cd in Model)
+            {
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <a asp-controller="CardDeck"
+                               asp-action="Display"
+                               asp-route-id="@cd.CardTier">
+                                @cd.CardTier
+
+                            </a>
+                        </div>
+
+                        <div class="card-body">
+                            <img src="~/CardDecks/@cd.PicFile" width="200">
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>

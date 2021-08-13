@@ -1,0 +1,220 @@
+﻿@model FileManagerModel
+@using System.IO;
+
+@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<style>
+  
+    * {
+        box-sizing: border-box;
+
+    }
+
+    body {
+        margin-left: 0;
+        font-family: 'Mongolian Baiti';
+        height: 1900px;
+    }
+
+    h2 {
+        position: absolute;
+        top: 100px;
+        left: 370px;
+        font-weight: bold;
+        font-size:large;
+        color: rosybrown;
+    }
+
+    h5 {
+        position: absolute;
+        top: 150px;
+        left: 630px;
+        font-family: 'Franklin Gothic';
+        font-size:x-large;
+        color: darkred;
+    }
+
+    h6 {
+        position: absolute;
+        top: 120px;
+        left: 370px;
+        font-family: 'Lucida Calligraphy';
+        width: 800px;
+    }
+
+    span {
+        position: absolute;
+        left: 320px;
+        top: 1110px;
+    }
+
+    w {
+        position: absolute;
+        left: 320px;
+        top: 1080px;
+    }
+
+    d {
+        position: absolute;
+        left: 370px;
+        top: 220px;
+    }
+
+    t {
+        position: absolute;
+        left: 370px;
+        top: 250px;
+    }
+
+    r {
+        position: absolute;
+        left: 800px;
+        top: 250px;
+    }
+
+    k {
+        position: absolute;
+        left: 320px;
+        top: 670px;
+    }
+
+    e {
+        position: absolute;
+        left: 370px;
+        top: 650px;
+    }
+
+    y {
+        position: absolute;
+        left: 610px;
+        top: 670px;
+    }
+
+    x {
+        position: absolute;
+        left: 910px;
+        top: 670px;
+    }
+
+    n {
+        position: absolute;
+        left: 370px;
+        top: 650px;
+    }
+
+    z {
+        position: absolute;
+        left: 600px;
+        top: 650px;
+    }
+
+    .header {
+        text-align: center;
+        padding: 32px;
+    }
+
+    .row {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding: 0 4px;
+    }
+
+    .column {
+        -ms-flex: 25%;
+        flex: 25%;
+        max-width: 25%;
+        padding: 0 4px;
+    }
+
+        .column img {
+            margin-top: 10px;
+            vertical-align: middle;
+            width: 100%;
+        }
+
+    div2 {
+        position: absolute;
+        top: 160px;
+        left: 960px;
+    }
+
+    div5{
+        left:400px;
+        top:100px;
+    }
+</style>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <div5>
+
+    <title>PULSE VENTURE JOURNAL </title>
+</head>
+<body>
+    <h2>COLLECTION OF CHAPTER 1</h2>
+    <h6> Be creative! Use this template to create a DIY Journal of yours! </h6>
+    <h5> JOURNAL TEMPLATE KIT </h5>
+
+    <w> <u> Background: </u></w>
+    <d> <u> Sticky Note: </u></d>
+    <e> <u> Journal Planner: </u></e>
+    <n> <u> Sticker Flag: </u></n>
+    <z> <u> Stickers: </u></z>
+
+    <span>
+        <a><img src="/Jimage/1background.jpg" width="830" , height="520" /></a>
+    </span>
+
+    <t>
+        <a><img src="/Jimage/notepad.jpg" width="400" , height="240" /></a>
+    </t>
+
+    <r>
+        <a><img src="/Jimage/notepad2.jpg" width="400" , height="240" /></a>
+    </r>
+
+    <k>
+        <a><img src="/Jimage/weeklyplanner.png" width="260" , height="360" /></a>
+    </k>
+
+    <y>
+        <a><img src="/Jimage/stickers-flags.png" width="270" , height="375" /></a>
+    </y>
+
+    <x>
+        <a><img src="/Jimage/pinterest.jpg" width="270" , height="359" /></a>
+    </x>
+
+    </div5>
+
+
+    <div class="row">
+        <div class="column">
+            @if (Model.Files != null)
+            {
+                foreach (FileInfo f in Model.Files)
+                {
+
+                    <div class="col-lg-12">
+                        <img src="~/Photo/@f.Name" style="width:100%">
+                    </div>
+                }
+            }
+        </div>
+
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div2>
+        <button onclick="window.print()">Print page</button>
+    </div2>
+</body>
+</html>

@@ -1,0 +1,111 @@
+﻿@{ Layout = "PulseUser";}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mission Two</title>
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <style>
+        body {
+            background-color: lightsalmon;
+        }
+
+        h2 {
+            font-family: 'Times New Roman', Times, serif;
+            position: absolute;
+            left: 200px;
+            margin-top: 20px;
+            font-size: xx-large;
+            color: maroon;
+            font-style: oblique;
+            font: bold;
+            width:1000px;
+        }
+
+        input[type="file"] {
+            position: absolute;
+            margin-left: 420px;
+            margin-top: 150px;
+            height: 43px;
+        }
+
+        input[type="submit"] {
+            position: absolute;
+            margin-top: 200px;
+            margin-left: 700px;
+            background-color: purple;
+            color: white;
+        }
+
+        label {
+            position: absolute;
+            left: 130px;
+            margin-top: 200px;
+            font-family: monospace;
+            color: black;
+        }
+
+        #camera {
+            position: absolute;
+            left: 270px;
+            top: 170px;
+        }
+    </style>
+
+    <div class="container">
+        <form method="post"
+              action="/Mission/MissionTwoPost"
+              enctype="multipart/form-data">
+
+            <div id="camera">
+                <a><img src="~/image/camera.png" width="100" , height="100" /></a>
+            </div>
+
+            <div class="form-group row">
+                <div class="offset-sm-2 col-sm-6">
+                    <h2>Mission 2 - Post Your Quote Of The Day</h2>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-6" for="picture" style="margin-left: 300px">Upload a photo of the quote here:</label>
+                <div class="col-sm-6">
+                    <input type="file" name="picture" id="picture" class="form-control" />
+                </div>
+            </div>
+
+
+            @if (ViewData["Picture"] != null)
+            {
+                <div class="form-group row">
+                    <div class="offset-sm-2 col-sm-6">
+                        <img src="/photos/@ViewData["Picture"]" />
+                    </div>
+                </div>
+            }
+
+            <div class="form-group row">
+                <div class="offset-sm-2 col-sm-6">
+                    <input type="submit" value="POST" class="btn btn-primary" />
+                </div>
+            </div>
+
+            @if (ViewData["Message"] != null)
+            {
+                <div class="form-group row">
+                    <div class="offset-sm-2 col-sm-6">
+                        <div class="alert alert-@ViewData["MsgType"]">
+                            <text>@Html.Raw(ViewData["Message"])</text>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </form>
+
+    </div>
+
+</body>
+</html>

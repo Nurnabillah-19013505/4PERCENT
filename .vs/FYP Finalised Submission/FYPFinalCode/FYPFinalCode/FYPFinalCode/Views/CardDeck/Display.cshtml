@@ -1,0 +1,13 @@
+﻿@{ 
+    Layout = null;
+}
+@model CardDeck
+
+<h1>@Model.CardTier</h1>
+<img src="~/CardDecks/@Model.PicFile">
+
+<dl class="dl-horizontal">
+    <dt>RegNo : </dt>
+    <dd>@Model.CardId</dd>
+</dl>
+

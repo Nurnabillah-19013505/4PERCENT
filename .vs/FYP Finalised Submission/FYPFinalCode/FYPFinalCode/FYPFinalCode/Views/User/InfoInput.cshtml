@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+@model FYPFinalCode.Models.Student
+    <style>
+
+        h4 {
+            font-family: Garamond,serif;
+            font-size: 20px;
+            font-weight: 300;
+        }
+
+        r {
+            font-family: Gergia, serif;
+            font-size: 17px;
+            font-weight: normal;
+        }
+
+        .button1 {
+            background-color: lightgreen;
+            color: black;
+            border: 2px solid lightgreen;
+            position: center;
+            margin-top: 30px;
+            font-size: 16px;
+            font-family: "Courier New", monospace;
+        }
+    </style>
+
+    <center>
+        <h2>Confirm Input Information</h2>
+
+
+        <h4>Student NRIC :</h4>
+        <r>@ViewData["StudentBc"]</r> <br />
+
+        <h4>Name :</h4>
+        <r>@ViewData["StudentName"]</r> <br />
+
+        <h4>Age: </h4>
+        <r>@ViewData["StudentAge"]</r> <br />
+
+        <form method="post" asp-controller="PulseVenture" asp-action="PulseVentureHomepage">
+            <button class="button button1">C O N F I R M  &  S T A R T</button>
+        </form>
+    </center>
+
+    
+
+
+
+

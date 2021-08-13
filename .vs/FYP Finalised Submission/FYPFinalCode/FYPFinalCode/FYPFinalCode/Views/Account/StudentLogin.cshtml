@@ -1,0 +1,89 @@
+﻿@{ 
+    Layout = null;
+}
+@using System.Security.Claims
+
+@model Parent
+
+
+    <style>
+
+        body {
+            background-color: snow;
+        }
+
+        h1 {
+            color: lightcoral;
+            font-weight: bold;
+          font-size: 40px;
+        }
+
+        div {
+            margin: 30px;
+            border-color: black;
+        }
+
+        input{
+            margin-top: 10px;
+            margin-left: 50px;
+        }
+
+        input[type="checkbox"]{
+            margin-left: 180px;
+        }
+       
+
+        #btn {
+            margin-left: 180px;
+            background-color: lightsalmon;
+            color: black;
+        }
+    </style>
+
+    <form method="post"
+          asp-controller="PulseVenture" asp-action="ChoicePage">
+        <h1>P U L S E L O G I N</h1>
+
+        <!-- User entering the email -->
+        <div class="col-sm-3">
+            <div class="form-group row">
+                <label asp-for="ParentEmail" class="control-label">
+                    Enter Parent Email :
+                </label>
+                <input type="text" asp-for="ParentEmail" class="form-control" />
+                <span asp-validation-for="ParentEmail" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- User entering the password -->
+        <div class="col-sm-3">
+            <div class="form-group row">
+                <label asp-for="ParentEmailPass" class="control-label">
+                    Enter Parent's Password :
+                </label>
+
+                <input type="password" asp-for="ParentEmailPass" class="form-control" />
+                <span asp-validation-for="ParentEmailPass" class="text-danger"></span>
+            </div>
+        </div>
+
+
+        <!-- Message Error -->
+        <div class="form-group row">
+            <span class="text-danger"> @ViewData["Message"]</span>
+        </div>
+
+        <!-- Remember Me Button -->
+        <label class="offset-sm-3 col-3">
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+
+        <!-- Login Button -->
+        <div class="form-group row">
+            <div class="offset-sm-3 col-3">
+                <input type="submit" id="btn" class="btn btn-primary" value="LOGIN" />
+            </div>
+        </div>
+
+
+    </form>

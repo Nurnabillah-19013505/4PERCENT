@@ -1,0 +1,137 @@
+﻿@{ 
+    Layout = null;
+}
+
+<style>
+    body{
+        background-color:lightsalmon;
+    }
+ 
+   h1{
+       font-family:"Copperplate",fantasy;
+       font-size:65px;
+       color:maroon;
+   }
+
+    h2 {
+        font-family: Garamond, serif;
+        font-size: 21px;
+        color:darkred;
+        
+    }
+    
+    .button1 {
+        background-color: beige;
+        color: black;
+        border: 2px solid beige;
+        font-family:"Courier New", monospace;
+        font-size:25px;
+        border-radius:15px;
+    }
+
+    .button1:hover {
+        background: honeydew;
+        color: darkgreen
+    }
+    .button2 {
+        background-color: lemonchiffon;
+        color: black;
+        border: 2px solid lemonchiffon;
+        font-family: "Courier New", monospace;
+        font-size: 25px;
+        border-radius: 15px;
+        display: block;
+        margin-top: 15px;
+
+        
+    }
+    .button2:hover{
+        background:linen;
+        color:darkgoldenrod;
+    }
+    .button3 {
+        background-color: lavenderblush;
+        color:black;
+        border: 2px solid lavenderblush;
+        font-family: "Courier New", monospace;
+        font-size: 25px;
+        border-radius: 15px;
+        display: block;
+        margin-top: 15px;
+    }
+    .button3:hover{
+        background: lavender;
+        color:darkmagenta;
+    }
+    .button4 {
+        background-color: bisque;
+        color: black;
+        border: 2px solid bisque;
+        font-family: "Courier New", monospace;
+        font-size: 25px;
+        border-radius: 15px;
+        display: block;
+        margin-top: 15px;
+    }
+
+     .button4:hover {
+            background: cornsilk;
+            color: peru;
+      }
+    .button5 {
+        background-color: lightcyan;
+        color: black;
+        border: 2px solid lightcyan;
+        font-family: "Courier New", monospace;
+        font-size: 25px;
+        border-radius: 15px;
+        display: block;
+        margin-top: 15px;
+    }
+
+    .button5:hover {
+            background: lightskyblue;
+            color: midnightblue;
+    }
+
+    center{
+        margin-top:100px;
+    }
+</style>
+<body>
+    <center>
+        <!-- HEADER -->
+        <h1> Welcome To Pulse Venture </h1>
+
+        <!-- MOTO -->
+        <h2> Say YES to POSITIVITY, Say YES to FREEDOM</h2>
+
+        &nbsp;
+
+        <!--To go to Introduction-->
+        <form action="/PulseVenture/Introduction" method="post">
+            <button class="button button1" style="height:50px; width:500px">
+                I N T R O D U C T I O N
+            </button>
+        </form>
+
+        <form action="/PulseVenture/Mainpage" method="post">
+            <button class="button button2" style="height:50px; width:500px">
+                P U L S E  V E N T U R E
+            </button>
+        </form>
+
+
+        <form action="/CardDeck/Index" method="post">
+            <button class="button button4" style="height:50px; width:500px">
+                C A R D  D E C K
+            </button>
+        </form>
+
+        <form action="/PulseVenture/Journal" method="post">
+            <button class="button button5" style="height:50px; width:500px">
+                J O U R N A L
+            </button>
+        </form>
+    </center>
+</body>
